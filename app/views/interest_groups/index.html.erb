@@ -1,0 +1,14 @@
+<div class="container">
+
+<h1>View all Interest Groups</h1>	
+
+	<ul>
+	<% @igroups.each do |i| %>
+	<li><%= i.name %></li>
+	<% end %>
+	</ul>
+	
+
+	<%= link_to "Create New Interest Group", new_interest_group_path %>
+
+</div>

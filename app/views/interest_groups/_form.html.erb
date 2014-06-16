@@ -1,0 +1,9 @@
+
+<%= form_for @igroup do |f| %>
+<div class="field">
+<%= f.text_field :name, placeholder: "Interest Group Name", class: "form-control" %>
+</div>
+<div class="actions">
+<%= f.submit "Add interest group", class: "btn btn-info" %>
+</div>
+<% end %>
