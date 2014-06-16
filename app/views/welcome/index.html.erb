@@ -1,0 +1,17 @@
+<div class="container">
+	<h1>List view with static text: </h1>
+
+	<h1>View all Interest Groups</h1>	
+
+	<ul>
+	<% @igroups.each do |i| %>
+	<li><%= i.name %></li>
+	<% @markers.each do |m| %>
+	<li> <%= m.title %> </li>
+	<% end %>
+	<% end %>
+	</ul>
+	
+
+	<%= link_to "Create New Interest Group", new_interest_group_path %>
+</div>
