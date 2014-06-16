@@ -1,13 +1,22 @@
 <div class="container">
-	<h1>List view with static text: </h1>
+	<h1>User's Location</h1>
 
-	<h1>View all Interest Groups</h1>	
+	<div id="current_location">
+
+	</div>
+
+
+	<h3>View all Interest Groups</h3>	
 
 	<ul>
 	<% @igroups.each do |i| %>
 	<li><%= i.name %></li>
-	<% @markers.each do |m| %>
-	<li> <%= m.title %> </li>
+	<% i.markers.each do |m| %>
+		<ul>
+	<li><%= m.title %></li>
+	<li><%= m.latitude %></li>
+	<li><%= m.longitude %></li>
+		</ul>
 	<% end %>
 	<% end %>
 	</ul>
@@ -15,3 +24,18 @@
 
 	<%= link_to "Create New Interest Group", new_interest_group_path %>
 </div>
+<script type="text/javascript">
+   function current_location(){ navigator.geolocation.getCurrentPosition(function(position) {
+          // get location from browser
+             var testid = document.getElementById("current_location");
+            current_latitude = position.coords.latitude;
+            current_longitude = position.coords.longitude;
+            testid.textContent = "Your current location is " + current_latitude + " " + current_longitude;
+          
+          })};
+              
+         
+
+        window.onload = current_location;
+
+ </script>
