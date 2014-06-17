@@ -36,6 +36,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'rails_admin'
+gem "geocoder"
 
 # Use unicorn as the app server
 # gem 'unicorn'

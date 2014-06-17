@@ -9,15 +9,14 @@
 	<h3>View all Interest Groups Here are my changes</h3>	
 
 	<ul>
-	<% @igroups.each do |i| %>
-	<li><%= i.name %></li>
-	<% i.markers.each do |m| %>
-		<ul>
+	<% @markers.each do |m| %>
 	<li><%= m.title %></li>
-	<li><%= m.latitude %></li>
-	<li><%= m.longitude %></li>
+	
+		<ul>
+			<li>Interest Group: <%= m.interest_group.name %></li>
+			<li>Address: <%= m.address %></li>
 		</ul>
-	<% end %>
+
 	<% end %>
 	</ul>
 	
