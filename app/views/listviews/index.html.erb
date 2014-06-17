@@ -1,12 +1,10 @@
 <div class="container">
 
-	<%= link_to "Map", mapviews_index_path, class: "btn btn-primary btn-lg" %>
 	<h1>User's Location: <%=@location%></h1>
 
 	<div id="current_location">
 
 	</div>
-
 
 	<h3>View all Markers Near You</h3>	
 
@@ -22,6 +20,8 @@
 
 	<% end %>
 	</ul>
+
+	<div><%= link_to "Map", mapviews_index_path, class: "btn btn-primary btn-lg" %></div>
 	
 </div>
 <script type="text/javascript">
