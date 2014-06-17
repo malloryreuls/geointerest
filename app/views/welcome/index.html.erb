@@ -1,12 +1,12 @@
 <div class="container">
-	<h1>User's Location</h1>
+	<h1>User's Location: <%=@location%></h1>
 
 	<div id="current_location">
 
 	</div>
 
 
-	<h3>View all Interest Groups Here are my changes</h3>	
+	<h3>View all Markers Near You</h3>	
 
 	<ul>
 	<% @markers.each do |m| %>
@@ -24,14 +24,19 @@
 	<%= link_to "Create New Interest Group", new_interest_group_path %>
 </div>
 <script type="text/javascript">
-   function current_location(){ navigator.geolocation.getCurrentPosition(function(position) {
+   setInterval(function current_location(){ navigator.geolocation.getCurrentPosition(function(position) {
           // get location from browser
-             var testid = document.getElementById("current_location");
+            var testid = document.getElementById("current_location");
             current_latitude = position.coords.latitude;
             current_longitude = position.coords.longitude;
             testid.textContent = "Your current location is " + current_latitude + " " + current_longitude;
+       
+
+            var cookie_val = position.coords.latitude + "," + position.coords.longitude ;
+              console.log(cookie_val);
+  			document.cookie = "lat_lng=" + escape(cookie_val);
           
-          })};
+          })}, 600000);
               
          
 
