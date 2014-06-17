@@ -4,7 +4,7 @@ class Marker < ActiveRecord::Base
 
   def self.nearme(loc)
 
-  	Marker.near(loc, 10)
+  	Marker.near(loc, 50)
 
   end
 

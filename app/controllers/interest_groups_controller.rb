@@ -26,6 +26,7 @@ class InterestGroupsController < ApplicationController
   end
 
   def show
+    @igroup = InterestGroup.find(params[:id])
   end
 
   def update

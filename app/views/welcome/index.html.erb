@@ -10,18 +10,16 @@
 
 	<ul>
 	<% @markers.each do |m| %>
-	<li><%= m.title %></li>
 	
+	<li>Interest Group: <%= link_to m.interest_group.name, interest_group_path(m.interest_group) %></li>
 		<ul>
-			<li>Interest Group: <%= m.interest_group.name %></li>
+			<li><%= m.title %></li>
 			<li>Address: <%= m.address %></li>
 		</ul>
 
 	<% end %>
 	</ul>
 	
-
-	<%= link_to "Create New Interest Group", new_interest_group_path %>
 </div>
 <script type="text/javascript">
    setInterval(function current_location(){ navigator.geolocation.getCurrentPosition(function(position) {
@@ -39,7 +37,6 @@
           })}, 600000);
               
          
-
-        window.onload = current_location;
+        //window.onload = current_location;
 
  </script>
