@@ -47,6 +47,7 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.0)
     font-awesome-rails (4.1.0.0)
@@ -119,6 +120,21 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     remotipart (1.2.1)
+    rspec-collection_matchers (1.0.0)
+      rspec-expectations (>= 2.99.0.beta1)
+    rspec-core (2.99.0)
+    rspec-expectations (2.99.0)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.99.0)
+    rspec-rails (2.99.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-collection_matchers
+      rspec-core (~> 2.99.0)
+      rspec-expectations (~> 2.99.0)
+      rspec-mocks (~> 2.99.0)
     safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -165,6 +181,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.0)
   rails_admin
+  rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
