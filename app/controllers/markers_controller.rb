@@ -7,6 +7,16 @@ class MarkersController < ApplicationController
   end
 
   def create
+    @marker = Marker.new(marker_params)
+    respond_to do |format|
+      if @marker.save
+        format.html { redirect_to @marker, notice: 'Marker was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @marker }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @marker.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit
@@ -21,4 +31,11 @@ class MarkersController < ApplicationController
 
   def destroy
   end
+
+private
+
+  def marker_params
+    params.require(:marker).permit(:title, :description, :address, :latitude, :longitude)
+  end
+
 end

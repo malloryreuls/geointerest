@@ -1,8 +1,11 @@
 class InterestGroupsController < ApplicationController
   before_action :authenticate_admin!, only: [:edit, :new, :update, :destroy, :create]
 
+  respond_to :json, :html
+
   def index
     @igroups = InterestGroup.all
+    respond_with @igroups
   end
 
   def new
@@ -11,11 +14,13 @@ class InterestGroupsController < ApplicationController
 
   def create
     @igroup = InterestGroup.new(igroup_params)
-    respond_to do |format|
       if @igroup.save
-        format.html { redirect_to @igroup, notice: 'Interest group was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @igroup }
+        respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { render json: @igroup, status: :created }
+        end
       else
+        respond_to do |format|
         format.html { render action: 'new' }
         format.json { render json: @igroup.errors, status: :unprocessable_entity }
       end
@@ -27,6 +32,7 @@ class InterestGroupsController < ApplicationController
 
   def show
     @igroup = InterestGroup.find(params[:id])
+    respond_with @igroup
   end
 
   def update
