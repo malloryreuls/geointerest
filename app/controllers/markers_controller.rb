@@ -16,6 +16,7 @@ class MarkersController < ApplicationController
   end
 
   def show
+    @marker = Marker.find(params[:id])
   end
 
   def destroy

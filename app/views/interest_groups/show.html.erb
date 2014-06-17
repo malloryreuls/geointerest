@@ -4,7 +4,7 @@
 	
 	<% @igroup.markers.each do |m| %>
 	<ul style="list-style:none;">
-		<li>Title: <b><%= m.title %></b></li>
+		<li>Title: <b><%= link_to m.title, interest_group_marker_path(m.interest_group.id, m.id) %></b></li>
 		<li>Description: <%= m.description %></li>
 		<li>Address: <%= m.address %>, Latitude: <%= m.latitude %>, Longitdue: <%= m.longitude %></li>				
 	</ul>

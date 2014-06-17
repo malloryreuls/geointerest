@@ -13,7 +13,8 @@
 	
 	<li>Interest Group: <%= link_to m.interest_group.name, interest_group_path(m.interest_group) %></li>
 		<ul>
-			<li><%= m.title %></li>
+			<li><%= link_to m.title, interest_group_marker_path(m.interest_group.id, m.id) %></li>
+			<li><%= m.id %> </li>
 			<li>Address: <%= m.address %></li>
 		</ul>
 

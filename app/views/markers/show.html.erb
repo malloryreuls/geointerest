@@ -1,2 +1,15 @@
-<h1>Markers#show</h1>
-<p>Find me in app/views/markers/show.html.erb</p>
+<div class="container">
+
+	<h1><%= @marker.title %></h1>
+
+	<ul style="list-style:none;">
+		<li>Title: <b><%= @marker.title %></b></li>
+		<li>Description: <%= @marker.description %></li>
+		<li>Address: <%= @marker.address %>, Latitude: <%= @marker.latitude %>, Longitdue: <%= @marker.longitude %></li>				
+	</ul>
+
+	<div>
+		<%= link_to "Back to markers page", root_path, class: "btn btn-primary btn-lg" %>
+	</div>
+	
+</div>
