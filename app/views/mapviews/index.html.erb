@@ -7,3 +7,103 @@
 	<div><%= link_to "List View", root_path, class: "btn btn-primary btn-lg" %></div>
 
 </div>
+
+<script type="text/javascript">
+
+
+      function initialize() { // all of our Maps stuff goes in here!
+        var current_latitude = null;
+        var current_longitude = null;
+        var myLatLng = null;
+        var directionsDisplay; // needed for Directions service
+        var directionsService = new google.maps.DirectionsService(); // brings DirectionsService into our app
+        directionsDisplay = new google.maps.DirectionsRenderer(); // sets directionsDisplay to use the Google Maps Directions Renderer
+        var map = null;
+
+         // calls getMarkers function
+
+        var getMarkers = function(){  // GETs all breakfast markers from the JSON API
+        
+          $.ajax ({
+            type: "GET", 
+            dataType: "json", 
+            url: "http://localhost:3000/interest_groups.json"   // this is our own JSON from jbuilder!         
+          }).done(function(data){
+          	console.log(data);
+            mapMarkers(data); // calling the mapMarkers function on this data
+          });
+        }
+
+        var mapMarkers = function(marker_data) {
+
+              
+          // for loop to place each marker with info from the JSON
+          var i, newMarker;
+          for (i=0; i < marker_data.markers.length; i++) {
+            console.log("hi");
+            newMarker = new google.maps.Marker({
+              position: new google.maps.LatLng(marker_data["markers"][i]["latitude"], marker_data["markers"][i]["longitude"]), // sets the LatLng of each spot
+              map: map, 
+              title: (marker_data["markers"][i]["title"])
+            });
+            console.log(google.maps);
+          };
+        }
+
+
+        
+
+         
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+          // get location from browser
+            current_latitude = position.coords.latitude;
+            current_longitude = position.coords.longitude;
+            myLatLng = new google.maps.LatLng(current_latitude, current_longitude);
+            console.log(myLatLng);
+
+         
+
+          // set map options
+            var mapOptions = {
+              center: myLatLng, // see above
+              zoom: 16 // arbitrary; you can zoom at whichever level you like
+            };
+
+            map = new google.maps.Map(document.getElementById("map-canvas"),
+                    mapOptions); // rendering a map in a div with the id of "map-canvas" and the options specified above in mapOptions
+
+               var marker = new google.maps.Marker({
+           position: myLatLng, // marker placed at the same location as our map center 
+           map: map, // make sure this matches the name of your map (ours is called "map")
+           title: "GA!" // for hover
+        });
+
+          // get markers from json
+            getMarkers();
+            // directionsDisplay.setMap(map);
+                
+                
+                
+                // marker;
+
+
+                
+          }); // we set this as a var because we're going to reuse it for center/marker position -- you can elect to create separate google.maps.LatLng objects 
+       
+
+       
+
+       
+
+        
+
+    
+
+    
+
+      }
+google.maps.event.addDomListener(window, 'page:change', initialize); // event listener that brings Maps onto our page on load/change
+
+
+</script>
