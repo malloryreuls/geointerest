@@ -3,8 +3,6 @@
 <div class="container">
 
 	<div id="map-canvas"></div>
-	
-	<div><%= link_to "List View", root_path, class: "btn btn-primary btn-lg" %></div>
 
 </div>
 
@@ -82,31 +80,17 @@
                var marker = new google.maps.Marker({
            position: myLatLng, // marker placed at the same location as our map center 
            map: map, // make sure this matches the name of your map (ours is called "map")
-           title: "GA!" // for hover
+           title: "Current Location" // for hover
         });
 
           // get markers from json
             getMarkers();
-            // directionsDisplay.setMap(map);
-                
-                
+            // directionsDisplay.setMap(map); 
                 
                 // marker;
-
-
                 
           }); // we set this as a var because we're going to reuse it for center/marker position -- you can elect to create separate google.maps.LatLng objects 
        
-
-       
-
-       
-
-        
-
-    
-
-    
 
       }
 
