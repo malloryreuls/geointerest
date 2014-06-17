@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class ListviewsController < ApplicationController
   def index
   	@igroups = InterestGroup.all
   	if cookies[:lat_lng] == nil
