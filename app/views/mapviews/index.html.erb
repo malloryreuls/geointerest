@@ -26,7 +26,7 @@
           $.ajax ({
             type: "GET", 
             dataType: "json", 
-            url: "http://localhost:3000/interest_groups.json"   // this is our own JSON from jbuilder!         
+            url: "/interest_groups"   // this is our own JSON from jbuilder!         
           }).done(function(data){
             mapMarkers(data); // calling the mapMarkers function on this data
           });
