@@ -81,8 +81,8 @@
 
               newMarker.info = new google.maps.InfoWindow({
                 content: '<div id="infowindow">'+
-                '<h4>' + marker_data["interest_groups"][i]["markers"][n].title + '</h4>'+
-                '<h5>' + "Interest Group: " + marker_data["interest_groups"][i].name + '</h5>'+
+                '<h4>' + "<a href='" + marker_data["interest_groups"][i]["markers"][n].url + "'>" + marker_data["interest_groups"][i]["markers"][n].title + "</a></h4>"+
+                '<h5>' + "Interest Group: " + "<a href='" + marker_data["interest_groups"][i]["markers"][n].igroup_url + "'>" + marker_data["interest_groups"][i].name + "</a></h5>"+
                 '<p>' + marker_data["interest_groups"][i]["markers"][n].description + '</p>'+
                 '<p>' + marker_data["interest_groups"][i]["markers"][n].address + '</p>'+
                 '<p>' + "Latitude: " + marker_data["interest_groups"][i]["markers"][n].latitude + " Longitude: " + marker_data["interest_groups"][i]["markers"][n].longitude + '</p>'+
