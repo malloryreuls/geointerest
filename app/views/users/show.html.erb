@@ -4,7 +4,8 @@
 
 	<ul>
 	<% @igroups.each do |i| %>
-	<h1><%= i.name %></h1> <button> Subscribe</button>
+	<h1><%= i.name %></h1> 
+	<button> Subscribe</button>
 	<% i.markers.each do |m| %>
 	<li><%=m.title%></li>
 	<% end %>
