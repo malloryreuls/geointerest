@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619175729) do
+ActiveRecord::Schema.define(version: 20140619221435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,12 +36,9 @@ ActiveRecord::Schema.define(version: 20140619175729) do
 
   create_table "interest_groups", force: true do |t|
     t.string   "name"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "interest_groups", ["user_id"], name: "index_interest_groups_on_user_id", using: :btree
 
   create_table "markers", force: true do |t|
     t.string   "title"
@@ -55,6 +52,16 @@ ActiveRecord::Schema.define(version: 20140619175729) do
   end
 
   add_index "markers", ["interest_group_id"], name: "index_markers_on_interest_group_id", using: :btree
+
+  create_table "user_interest_groups", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "interest_group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_interest_groups", ["interest_group_id"], name: "index_user_interest_groups_on_interest_group_id", using: :btree
+  add_index "user_interest_groups", ["user_id"], name: "index_user_interest_groups_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
