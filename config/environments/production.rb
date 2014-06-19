@@ -68,6 +68,18 @@ Rails.application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'geointerest.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'google.com',
+  user_name:            ENV["COMPANY_EMAIL"],
+  password:             ENV["EMAIL_PASSWORD"],
+  authentication:       'plain',
+  enable_starttls_auto: true  }
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
