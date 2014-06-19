@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+ resources :user_interest_groups
+
   get 'mapviews/index'
 
   devise_for :admins

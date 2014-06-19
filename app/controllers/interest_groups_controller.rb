@@ -5,6 +5,7 @@ class InterestGroupsController < ApplicationController
 
   def index
     @igroups = InterestGroup.all
+    @uigroups = UserInterestGroup.new
     respond_with @igroups
   end
 

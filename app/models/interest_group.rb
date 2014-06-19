@@ -1,7 +1,8 @@
 class InterestGroup < ActiveRecord::Base
-  belongs_to :user
-
+  
+has_many :user_interest_groups
   has_many :markers
+  has_many :users, through: :user_interest_groups
 
    def self.nearme(loc)
 
