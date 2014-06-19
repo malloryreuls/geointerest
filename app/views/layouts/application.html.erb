@@ -11,8 +11,11 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">GeoInterest</a>
+      <a class="navbar-brand" href="/"><b>GeoInterest</b></a>
+      <a class="navbar-brand" href= "/interest_groups" >Interest Groups</a>
+      
     </div>
+
 
     <div class="btn-group nav navbar-nav navbar-middle">
         <%= link_to "List", root_path, class: "btn btn-primary" %>
@@ -25,7 +28,7 @@
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <li><%= link_to "Sign In", new_user_session_path %></li>
         	<% else %>
-          <li class="navbar-text navbar-right"><span>Hello, <%= current_user.email %></span></li>
+          <li class="navbar-text navbar-right"><span>Hello, <%= link_to current_user.email, edit_user_registration_path %></span></li>
           <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
         <% end %> 
       </ul> 

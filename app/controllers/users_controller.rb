@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
-  def show
+  def new
+  	@igroups = InterestGroup.all
   end
 end
