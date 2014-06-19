@@ -3,4 +3,8 @@ class UsersController < ApplicationController
   	@igroups = InterestGroup.all
   
   end
+
+  def show
+  	@igroups = InterestGroup.all
+  end
 end
