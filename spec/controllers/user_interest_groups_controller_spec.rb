@@ -23,16 +23,28 @@ describe UserInterestGroupsController do
     end
   end
 
+<<<<<<< HEAD
+  describe "GET 'edit'" do
+    it "returns http success" do
+      get 'edit'
+=======
   describe "GET 'show'" do
     it "returns http success" do
       get 'show'
+>>>>>>> bc60d47c69d90e2100be455aef4c8aed2f3d9509
       response.should be_success
     end
   end
 
+<<<<<<< HEAD
+  describe "GET 'show'" do
+    it "returns http success" do
+      get 'show'
+=======
   describe "GET 'edit'" do
     it "returns http success" do
       get 'edit'
+>>>>>>> bc60d47c69d90e2100be455aef4c8aed2f3d9509
       response.should be_success
     end
   end
