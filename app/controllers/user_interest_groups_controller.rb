@@ -1,9 +1,9 @@
-class UserInterestGroupsController < ApplicationController
+  class UserInterestGroupsController < ApplicationController
   respond_to :json, :html
 
   def index
     @uigroups = UserInterestGroup.all
-    @igrups = InterestGroup.all
+    @igroups = InterestGroup.all
     @markers = Marker.all
     respond_with @uigroups
   end
@@ -37,6 +37,11 @@ class UserInterestGroupsController < ApplicationController
   end
 
   def destroy
+    @uigroup.destroy
+    respond_to do |format|
+      format.html { redirect_to interest_groups_path }
+      format.json { render json: { head: :ok } }
+    end
   end
 
 private

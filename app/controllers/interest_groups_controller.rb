@@ -6,6 +6,7 @@ class InterestGroupsController < ApplicationController
   def index
     @igroups = InterestGroup.all
     @uigroups = UserInterestGroup.new
+    @myuigroups = UserInterestGroup.all
     @currentigroup = current_user.interest_groups
     respond_with @currentigroup
   end
