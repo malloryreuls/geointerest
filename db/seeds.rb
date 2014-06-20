@@ -45,3 +45,9 @@ m.markers.create(title: "The Echo", address: "1822 Sunset Blvd, Los Angeles, CA 
 m.markers.create(title: "Club Nokia", address: "800 W Olympic Blvd, Los Angeles, CA 90015")
 m.markers.create(title: "Nokia Theatre L.A. Live", address: "777 Chick Hearn Ct, Los Angeles, CA 90015")
 m.markers.create(title: "Hollywood Palladium", address: "6215 Sunset Blvd, Los Angeles, CA 90028")
+
+f = InterestGroup.create(name: "GA Secrets")
+f.markers.create(title: "Groundworks Coffee Spot", address: "395 Santa Monica Blvd
+Santa Monica, CA 90401")
+f.markers.create(title: "GA Campus", address: "	1520 2nd St, Santa Monica, CA 90401")
+f.markers.create(title: "Copa Happy Hour", description:"Best Happy Hour to meet alumni", address: " 217 Broadway, Santa Monica, CA 90401")
