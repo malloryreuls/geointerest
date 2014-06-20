@@ -4,11 +4,11 @@
 
       <h1>User's Location: <%=@location%></h1>
 
-     <div id="map-canvas"></div>
+      <div id="map-canvas"></div>
 
-   </div>
+    </div>
 
-   <script type="text/javascript">
+    <script type="text/javascript">
 
 
       function initialize() { // all of our Maps stuff goes in here!
@@ -26,7 +26,7 @@
           // get location from browser
           current_latitude = position.coords.latitude;
           current_longitude = position.coords.longitude;
-          myLatLng = new google.maps.LatLng(current_latitude, current_longitude);         
+          var myLatLng = new google.maps.LatLng(current_latitude, current_longitude);
 
           // set map options
           var mapOptions = {
@@ -41,7 +41,8 @@
            position: myLatLng, // marker placed at the same location as our map center 
            map: map, // make sure this matches the name of your map (ours is called "map")
            title: "Current Location" // for hover
-         });
+         })
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
 
         var getMarkers = function(){  // GETs all breakfast markers from the JSON API
 
