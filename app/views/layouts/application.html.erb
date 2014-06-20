@@ -6,20 +6,21 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/"><b>GeoInterest</b></a>
+      <a class="navbar-brand" href="/"><b>GeoInterest</b></a>      
+    <% if current_user %>
       <a class="navbar-brand" href= "/interest_groups" >Interest Groups</a>
-      
     </div>
-
-
     <div class="btn-group nav navbar-nav navbar-middle">
-        <%= link_to "List", root_path, class: "btn btn-primary" %>
+        <%= link_to "List", listviews_index_path, class: "btn btn-primary" %>
         <%= link_to "Map", mapviews_index_path, class: "btn btn-primary" %>
+        <% end %> 
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

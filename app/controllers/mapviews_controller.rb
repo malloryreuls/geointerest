@@ -1,4 +1,7 @@
 class MapviewsController < ApplicationController
+
+	before_action :authenticate_user!
+	
   def index
   	@igroups = InterestGroup.all
   	if cookies[:lat_lng] == nil

@@ -3,15 +3,14 @@
 	<h2><%= current_user.email%>'s Profile</h2>
 
 	<ul>
-	<% @igroups.each do |i| %>
-	<h1><%= i.name %></h1> 
-	<button> Subscribe</button>
-	<% i.markers.each do |m| %>
-	<li><%=m.title%></li>
+	<% @myigroups.each do |i| %>
+		<h1><%= i.name %></h1> 
+		<button> Subscribe</button>
+		<% i.markers.each do |m| %>
+			<li><%=m.title%></li>
+		<% end %>
 	<% end %>
-	<% end %>
-
-</ul>
+	</ul>
 	
 
 </div>

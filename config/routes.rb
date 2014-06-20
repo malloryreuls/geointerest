@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  resources :user_interest_groups
 
   get 'mapviews/index'
+  get 'listviews/index'
 
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -11,11 +12,12 @@ Rails.application.routes.draw do
   resources :interest_groups do
     resources :markers
   end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'listviews#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

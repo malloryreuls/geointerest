@@ -12,7 +12,7 @@ class UserInterestGroupsController < ApplicationController
     @uigroup = UserInterestGroup.new(uigroup_params)
       if @uigroup.save
         respond_to do |format|
-        format.html { redirect_to root_path }
+        format.html { redirect_to listviews_index_path }
         format.json { render json: @uigroup, status: :created }
         end
       else

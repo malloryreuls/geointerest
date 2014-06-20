@@ -17,7 +17,7 @@ class InterestGroupsController < ApplicationController
     @igroup = InterestGroup.new(igroup_params)
       if @igroup.save
         respond_to do |format|
-        format.html { redirect_to root_path }
+        format.html { redirect_to listviews_index_path }
         format.json { render json: @igroup, status: :created }
         end
       else
