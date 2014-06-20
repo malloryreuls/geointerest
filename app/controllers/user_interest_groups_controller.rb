@@ -2,6 +2,10 @@ class UserInterestGroupsController < ApplicationController
   respond_to :json, :html
 
   def index
+    @uigroups = UserInterestGroup.all
+    @igrups = InterestGroup.all
+    @markers = Marker.all
+    respond_with @uigroups
   end
 
   def new

@@ -8,7 +8,11 @@
         <%= form_for @uigroups do |f| %>
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.hidden_field :interest_group_id, value: i.id %>
+          <% if i.user_interest_groups.map(&:user_id).include? current_user.id %>
+          <p>You already follow this group</p>
+          <% else %>
           <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}%>
+          <% end %>
         
         <% end %><br>
       <% end %>

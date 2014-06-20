@@ -1,16 +1,21 @@
 <div class="container">
 
-	<h2><%= current_user.email%>'s Profile</h2>
+<div class="page-header">
+  <h3><%= current_user.email.upcase %>'s Profile</h3>
+</div>
+
+<div class="jumbotron">
+  <h4>My Interest Groups:</h4>
 
 	<ul>
 	<% @myigroups.each do |i| %>
-		<h1><%= i.name %></h1> 
-		<button> Subscribe</button>
-		<% i.markers.each do |m| %>
-			<li><%=m.title%></li>
-		<% end %>
+		<h5><%= i.name %></h5> 
 	<% end %>
-	</ul>
+	</ul>	
+</div>
+	
+
+	
 	
 
 </div>
