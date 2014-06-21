@@ -12,10 +12,10 @@
           <% if i.user_interest_groups.map(&:user_id).include? current_user.id %>
 
 
-          <%= link_to "Unfollow", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-danger btn-lg" %>
+          <%= link_to "Unfollow", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-danger btn-md" %>
           
           <% else %>
-          <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-lg" %>
+          <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-md" %>
           <% end %>
         
         <% end %><br>
