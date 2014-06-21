@@ -4,7 +4,9 @@ class CreateUserInterestGroups < ActiveRecord::Migration
       t.references :user, index: true
       t.references :interest_group, index: true
 
+
       t.timestamps
     end
+    add_index :user_interest_groups, [:user_id, :interest_group_id], unique: true
   end
 end
