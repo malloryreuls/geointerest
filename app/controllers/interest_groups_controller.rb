@@ -5,7 +5,11 @@ class InterestGroupsController < ApplicationController
 
   def index
     @igroups = InterestGroup.all
+
+    # For the submit form to follow Interest Groups
     @uigroups = UserInterestGroup.new
+
+    # creates the interestgroup.json formatted by the currentusers interestgroups that they follow
     @currentigroup = current_user.interest_groups
     respond_with @currentigroup
   end
@@ -15,6 +19,8 @@ class InterestGroupsController < ApplicationController
   end
 
   def create
+
+    # creates a new interestgroup formatted for json and html
     @igroup = InterestGroup.new(igroup_params)
       if @igroup.save
         respond_to do |format|

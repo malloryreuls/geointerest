@@ -1,12 +1,12 @@
 class InterestGroup < ActiveRecord::Base
+
+# userinterestgroups because is the join table that stores our foreign keys for user
   has_many :user_interest_groups
   has_many :markers
+
+  # accesses users through our join table
   has_many :users, through: :user_interest_groups
 
-   def self.nearme(loc)
 
-  	InterestGroup.first.markers.near(loc, 10)
-
-  end
 
 end

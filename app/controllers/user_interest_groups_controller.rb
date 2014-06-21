@@ -1,10 +1,12 @@
   class UserInterestGroupsController < ApplicationController
   respond_to :json, :html
-
+# join table between users and interest_groups
   def index
+
     @uigroups = UserInterestGroup.all
     @igroups = InterestGroup.all
     @markers = Marker.all
+    # creates json data for all UserInterestGroup relationships
     respond_with @uigroups
   end
 
@@ -37,6 +39,8 @@
   end
 
   def destroy
+
+    # allows us to unfollow an interest group in interestgroup index be creating a destroy action for the specific userinterestgroup relationship by finding its id
     @uigroup = UserInterestGroup.find(params[:id])  
     @uigroup.destroy
     respond_to do |format|

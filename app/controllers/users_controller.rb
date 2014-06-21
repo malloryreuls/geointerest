@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show  
+    # our profile page- allows us to see all of the interest groups we follow
     @myigroups = current_user.interest_groups
   end
 
