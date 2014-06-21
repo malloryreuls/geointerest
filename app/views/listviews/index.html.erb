@@ -8,13 +8,14 @@
 
 	<h3>View all Markers Near You</h3>	
 
-	<ul>
+	<ul class="list-group">
 	<% @markers.each do |m| %>
-	<li><%= link_to m.title, interest_group_marker_path(m.interest_group.id, m.id) %></li>
+	<%= link_to m.title, interest_group_marker_path(m.interest_group.id, m.id), class: "list-group-item active" %>
 	
-		<ul>
-			<li>Interest Group: <%= link_to m.interest_group.name, interest_group_path(m.interest_group) %></li>
-			<li>Address: <%= m.address %></li>
+		<ul class="list-group">
+			<li class="list-group-item">Interest Group: <%= link_to m.interest_group.name, interest_group_path(m.interest_group) %></li>
+			<li class="list-group-item">Address: <%= m.address %></li>
+			<li class="list-group-item text-muted"><%= m.latitude %>, <%= m.longitude %></li>
 		</ul>
 
 	<% end %>

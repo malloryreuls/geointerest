@@ -3,7 +3,7 @@
 <h1>View all Interest Groups</h1>	
 
 	<% @igroups.each do |i| %>
-		<h1><%= i.name %></h1>
+		<h3><%= i.name %></h3>
         <!-- Create a record in LeagueTeams with team:@team, league:l -->
         <%= form_for @uigroups do |f| %>
           <%= f.hidden_field :user_id, value: current_user.id %>
@@ -12,7 +12,7 @@
           <% if i.user_interest_groups.map(&:user_id).include? current_user.id %>
 
 
-          <%= link_to "Unfollow", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-danger btn-md" %>
+          <%= link_to "Unfollow", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-warning btn-md" %>
           
           <% else %>
           <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-md" %>
