@@ -37,6 +37,7 @@
   end
 
   def destroy
+    @uigroup = UserInterestGroup.find(params[:id])
     @uigroup.destroy
     respond_to do |format|
       format.html { redirect_to interest_groups_path }

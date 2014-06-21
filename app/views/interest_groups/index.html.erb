@@ -8,11 +8,14 @@
         <%= form_for @uigroups do |f| %>
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.hidden_field :interest_group_id, value: i.id %>
+          
           <% if i.user_interest_groups.map(&:user_id).include? current_user.id %>
-          <p>You already follow this group</p>
+
+
+          <%= link_to "Unfollow", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-danger btn-lg" %>
           
           <% else %>
-          <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}%>
+          <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-lg" %>
           <% end %>
         
         <% end %><br>
