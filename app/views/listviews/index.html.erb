@@ -1,7 +1,5 @@
 <div class="container">
 
-	<h1>User's Location: <%=@location%></h1>
-
 	<div id="current_location">
 
 	</div>
@@ -19,7 +17,6 @@
 		<ul class="list-group">
 			<li class="list-group-item">Interest Group: <%= link_to m.interest_group.name, interest_group_path(m.interest_group) %></li>
 			<li class="list-group-item">Address: <%= m.address %></li>
-			<li class="list-group-item text-muted"><%= m.latitude %>, <%= m.longitude %></li>
 		</ul>
 
 	<% end %>

@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>View all Interest Groups</h1>	
+  <h1>Discover Interest Groups</h1>	
 
   <% @igroups.each do |i| %>
   <h3><%= link_to i.name.titleize, interest_group_path(i) %></h3>
@@ -27,7 +27,7 @@
       <% else %>
 
       <!-- Otherwise, submit a follow to that interest group and add it to the current user -->
-      <%= f.submit "+ Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-md" %>
+      <%= f.submit "+ Follow", class: "btn btn-primary btn-md" %>
       <% end %>
 
       <% if i.user_id.to_i == current_user.id.to_i %>
