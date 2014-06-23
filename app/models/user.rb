@@ -8,4 +8,6 @@ has_many :user_interest_groups
 has_many :interest_groups, through: :user_interest_groups
 has_many :markers, through: :interest_groups
 
+validates_presence_of :username
+
 end

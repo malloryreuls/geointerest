@@ -57,4 +57,4 @@ describe MarkersController do
 				end
 	end
 
-end
+end	

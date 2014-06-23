@@ -4,6 +4,11 @@
 
   <% @igroups.each do |i| %>
   <h3><%= link_to i.name.titleize, interest_group_path(i) %></h3>
+    <% @users.each do |u| %> 
+      <% if u.id.to_i == i.user_id.to_i %>
+        <h5><%= link_to u.username, user_path(u), style: "color: black;" %></h5>
+        <% end %>
+    <% end %>
     <%= form_for @uigroups do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :interest_group_id, value: i.id %>

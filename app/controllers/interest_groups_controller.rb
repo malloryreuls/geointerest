@@ -6,7 +6,7 @@ class InterestGroupsController < ApplicationController
     @igroups = InterestGroup.all
     # For the submit form to follow Interest Groups
     @uigroups = UserInterestGroup.new
-
+    @users = User.all
     # creates the interestgroup.json formatted by the currentusers interestgroups that they follow
     @currentigroup = current_user.interest_groups
     respond_with @currentigroup

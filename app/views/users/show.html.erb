@@ -1,31 +1,32 @@
 <div class="container">
 
 <div class="page-header">
-  <h3><%= current_user.email.upcase %>'s Profile</h3>
+  <h3><%= @user.username.capitalize %>'s Profile</h3>
 </div>
 
 <div class="jumbotron">
   <h4>My Interest Groups:</h4>
-
 	<ul>
-	<% @igroups.each do |i| %>
-	<% if i.user_id.to_i == current_user.id.to_i %>
-		<h5><%= i.name.titleize %></h5> 
+	<% @igroups.each do |ig| %>
+		<% if @user.id.to_i == ig.user_id.to_i %>
+			<h5><%= link_to ig.name.titleize, interest_group_path(ig) %></h5>
+		<% end %>
 	<% end %>
 
-	<% end %>
 	</ul>	
 </div>
 <div class="jumbotron">
   <h4>Interest Groups I Follow:</h4>
 
-	<ul>
-	<% @followigroups.each do |i| %>
-		<h5><%= i.name.titleize %></h5> 
+  	<ul>
+	<% @user.interest_groups.each do |i| %>
+		<h5><%= link_to i.name.titleize, interest_group_path(i) %></h5> 
 	<% end %>
 	</ul>	
+
 </div>
 	
+	 <%= link_to "Create New Interest Group", new_interest_group_path, class: 'btn btn-primary btn-lg' %>
 
 	
 	

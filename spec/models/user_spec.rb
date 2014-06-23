@@ -1,7 +1,7 @@
  require 'spec_helper'
 
  describe User, :type => :model do
- 	
+
  	it 'is invalid without a email' do
  	noemail = User.new(email: "")
  	expect(noemail).to be_invalid
