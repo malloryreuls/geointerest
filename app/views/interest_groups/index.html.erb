@@ -18,11 +18,11 @@
       
       <!-- grabbing and linking to the specific userinterestgroup/id that matches the user_id and interest_group_id.......then deletes it -->
 
-      <%= link_to "Unfollow", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-warning btn-md" %>          
+      <%= link_to "√ Following", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-success btn-md" %>          
       <% else %>
 
       <!-- Otherwise, submit a follow to that interest group and add it to the current user -->
-      <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-md" %>
+      <%= f.submit "+ Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-md" %>
       <% end %>
 
       <% if i.user_id.to_i == current_user.id.to_i %>
