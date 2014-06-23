@@ -4,7 +4,9 @@ class UsersController < ApplicationController
   	@igroups = InterestGroup.all
   end
 
-  def show  
+  def show
+    @user = User.find(params[:id])
+
     # our profile page- allows us to see all of the interest groups we follow
     @followigroups = current_user.interest_groups
     @igroups =  InterestGroup.all

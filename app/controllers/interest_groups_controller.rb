@@ -1,7 +1,6 @@
 class InterestGroupsController < ApplicationController
 
   respond_to :json, :html
-  
 
   def index
     @igroups = InterestGroup.all
