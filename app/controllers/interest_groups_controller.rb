@@ -18,8 +18,7 @@ class InterestGroupsController < ApplicationController
   end
 
   def create
-    u = current_user
-    @igroup = u.interest_groups.new(igroup_params)
+    @igroup = InterestGroup.new(igroup_params)
     # creates a new interestgroup formatted for json and html
       if @igroup.save
         respond_to do |format|
@@ -46,12 +45,15 @@ class InterestGroupsController < ApplicationController
   end
 
   def destroy
+     @igroup = InterestGroup.find(params[:id])
+      @igroup.destroy
+      redirect_to interest_groups_path
   end
 
 private 
 
   def igroup_params
-    params.require(:interest_group).permit(:name)
+    params.require(:interest_group).permit(:name, :user_id)
   end
 
 

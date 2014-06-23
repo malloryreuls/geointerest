@@ -4,28 +4,32 @@
 
   <% @igroups.each do |i| %>
   <h3><%= link_to i.name, interest_group_path(i) %></h3>
-  <%= form_for @uigroups do |f| %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :interest_group_id, value: i.id %>
+    <%= form_for @uigroups do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :interest_group_id, value: i.id %>
 
-  <!-- conditional statement that removes the follow button if the user already follows that interest group. 
-  i - i is looping through all of the interest groups
-  user_interest_groups.mao(&:user_id) - is looking through all of the data in our join table "user_interest_group" and is finding the user_id that matches the current_user's id.
-  It's sorting through this data and only showing a follow button for the interest group that the current user is not subscribed to. -->
+    <!-- conditional statement that removes the follow button if the user already follows that interest group. 
+    i - i is looping through all of the interest groups
+    user_interest_groups.mao(&:user_id) - is looking through all of the data in our join table "user_interest_group" and is finding the user_id that matches the current_user's id.
+    It's sorting through this data and only showing a follow button for the interest group that the current user is not subscribed to. -->
 
 
-  <% if i.user_interest_groups.map(&:user_id).include? current_user.id %>
-  
-  <!-- grabbing and linking to the specific userinterestgroup/id that matches the user_id and interest_group_id.......then deletes it -->
+      <% if i.user_interest_groups.map(&:user_id).include? current_user.id %>
+      
+      <!-- grabbing and linking to the specific userinterestgroup/id that matches the user_id and interest_group_id.......then deletes it -->
 
-  <%= link_to "Unfollow", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-warning btn-md" %>          
-  <% else %>
+      <%= link_to "Unfollow", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-warning btn-md" %>          
+      <% else %>
 
-  <!-- Otherwise, submit a follow to that interest group and add it to the current user -->
-  <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-md" %>
-  <% end %>
+      <!-- Otherwise, submit a follow to that interest group and add it to the current user -->
+      <%= f.submit "Follow", data: {confirm: "Subscribe to this Interest Group?"}, class: "btn btn-primary btn-md" %>
+      <% end %>
 
-  <% end %><br>
+      <% if i.user_id.to_i == current_user.id.to_i %>
+      <%= link_to "Delete Interest Group", [i], method: :delete, class: "btn btn-warning btn-md" %>
+      <% end %>
+
+    <% end %>
   <% end %>
 
   <%= link_to "Create New Interest Group", new_interest_group_path %>

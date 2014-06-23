@@ -1,7 +1,15 @@
 <div class="container">
 
-	<h2><%= @igroup.name %></h2>
+
+
+	<h2 style="display:inline-block;"><%= @igroup.name %></h2>
 	
+	<div style="display:inline-block; float:right;">
+		<% if @igroup.user_id.to_i == current_user.id.to_i %>
+			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-primary btn-lg" %>
+		<% end %>
+	</div>
+
 	<% @igroup.markers.each do |m| %>
 	<ul style="list-style:none;">
 		<li>Title: <b><%= link_to m.title, interest_group_marker_path(m.interest_group.id, m.id) %></b></li>
@@ -14,9 +22,7 @@
 			<% end %>
 	<% end %>
 
-	<div>
-		<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-primary btn-lg" %>
-	</div>
+	
 	<div>
 		<%= link_to "Back to markers page", listviews_index_path, class: "btn btn-primary btn-lg" %>
 	</div>
