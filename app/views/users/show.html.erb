@@ -10,7 +10,7 @@
 	<ul>
 	<% @igroups.each do |i| %>
 	<% if i.user_id.to_i == current_user.id.to_i %>
-		<h5><%= i.name %></h5> 
+		<h5><%= i.name.titleize %></h5> 
 	<% end %>
 
 	<% end %>
@@ -21,7 +21,7 @@
 
 	<ul>
 	<% @followigroups.each do |i| %>
-		<h5><%= i.name %></h5> 
+		<h5><%= i.name.titleize %></h5> 
 	<% end %>
 	</ul>	
 </div>

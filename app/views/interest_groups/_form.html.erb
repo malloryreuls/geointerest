@@ -1,7 +1,16 @@
 
 <%= form_for @igroup do |f| %>
+<% if @igroup.errors.any? %>
+<div class="alert alert-warning">
+<ul>
+<% @igroup.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
 <div class="field">
-<%= f.text_field :name, placeholder: "Interest Group Name", class: "form-control" %>
+<%= f.text_field :name, placeholder: "Interest Group Name", class: "form-control"%>
 <%= f.hidden_field :user_id, value: current_user.id %>
 </div>
 <div class="actions">

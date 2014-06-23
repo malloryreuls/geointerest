@@ -1,4 +1,8 @@
 class Marker < ActiveRecord::Base
+
+validates_presence_of :title, :description, :interest_group_id, :address
+
+
   belongs_to :interest_group
 
   # geocode gem that converts address into lat long

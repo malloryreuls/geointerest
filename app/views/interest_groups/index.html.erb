@@ -3,7 +3,7 @@
   <h1>View all Interest Groups</h1>	
 
   <% @igroups.each do |i| %>
-  <h3><%= link_to i.name, interest_group_path(i) %></h3>
+  <h3><%= link_to i.name.titleize, interest_group_path(i) %></h3>
     <%= form_for @uigroups do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :interest_group_id, value: i.id %>

@@ -1,5 +1,15 @@
 <%= form_for [@igroup, @marker] do |f| %>
 
+<% if @marker.errors.any? %>
+<div class="alert alert-warning">
+<ul>
+<% @marker.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control" %>

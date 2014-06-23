@@ -1,10 +1,10 @@
 class InterestGroupsController < ApplicationController
 
   respond_to :json, :html
+  
 
   def index
     @igroups = InterestGroup.all
-
     # For the submit form to follow Interest Groups
     @uigroups = UserInterestGroup.new
 
@@ -19,8 +19,10 @@ class InterestGroupsController < ApplicationController
 
   def create
     @igroup = InterestGroup.new(igroup_params)
+   
     # creates a new interestgroup formatted for json and html
       if @igroup.save
+
         respond_to do |format|
         format.html { redirect_to interest_groups_path }
         format.json { render json: @igroup, status: :created }

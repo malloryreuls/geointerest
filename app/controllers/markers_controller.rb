@@ -12,11 +12,11 @@ class MarkersController < ApplicationController
   end
 
   def create
-    i = InterestGroup.find(params[:interest_group_id])
-    @marker = i.markers.new(marker_params)
+    @igroup = InterestGroup.find(params[:interest_group_id])
+    @marker = @igroup.markers.new(marker_params)
     respond_to do |format|
       if @marker.save
-        format.html { redirect_to i, notice: 'Marker was successfully created.' }
+        format.html { redirect_to @igroup, notice: 'Marker was successfully created.' }
         format.json { render action: 'show', status: :created, location: @marker }
       else
         format.html { render action: 'new' }

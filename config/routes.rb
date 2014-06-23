@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   resources :user_interest_groups, only: [:create, :destroy]
 
-  get 'mapviews/index'
-  get 'listviews/index'
+  resources :mapviews, only:[:index]
+  resources :listviews, only:[:index]
 
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
