@@ -1,5 +1,4 @@
 class InterestGroupsController < ApplicationController
-  before_action :authenticate_admin!, only: [:edit, :new, :update, :destroy, :create]
 
   respond_to :json, :html
 
@@ -15,16 +14,16 @@ class InterestGroupsController < ApplicationController
   end
 
   def new
-    @igroup = InterestGroup.new
+   @igroup = InterestGroup.new
   end
 
   def create
-
+    u = current_user
+    @igroup = u.interest_groups.new(igroup_params)
     # creates a new interestgroup formatted for json and html
-    @igroup = InterestGroup.new(igroup_params)
       if @igroup.save
         respond_to do |format|
-        format.html { redirect_to listviews_index_path }
+        format.html { redirect_to interest_groups_path }
         format.json { render json: @igroup, status: :created }
         end
       else

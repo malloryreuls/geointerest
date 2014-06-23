@@ -8,7 +8,19 @@
   <h4>My Interest Groups:</h4>
 
 	<ul>
-	<% @myigroups.each do |i| %>
+	<% @igroups.each do |i| %>
+	<% if i.user_id.to_i == current_user.id.to_i %>
+		<h5><%= i.name %></h5> 
+	<% end %>
+
+	<% end %>
+	</ul>	
+</div>
+<div class="jumbotron">
+  <h4>Interest Groups I Follow:</h4>
+
+	<ul>
+	<% @followigroups.each do |i| %>
 		<h5><%= i.name %></h5> 
 	<% end %>
 	</ul>	
