@@ -1,8 +1,13 @@
 <div class="container">
 
 <div class="page-header">
-  <div style="display: inline-block;"><%= image_tag @user.avatar.url(:medium) %></div>
+  <div style="display: inline-block;"><%= image_tag @user.avatar.url(:thumb) %></div>
   <h3 style="display: inline-block;"><%= @user.username.capitalize %>'s Profile</h3>
+  <p>Following: <%= @user.interest_groups.count %></p>
+  <p>My Interest Groups: <%= @myigroups %></p>
+  	<% if current_user.id == @user.id %>
+  <%= link_to "Edit User", edit_user_registration_path(@user) %>
+  <% end %>
 </div>
 
 <div class="jumbotron">

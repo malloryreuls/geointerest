@@ -2,14 +2,14 @@
 
 <div class="marker-container", style="background-image:url('<%=@igroup.avatar.url%>');">
 	<h2 class="ig-title"><%= @igroup.name.titleize %></h2>
+	</div>
 
-	<%= link_to 'Edit', edit_interest_group_path(@igroup), class: "btn btn-primary btn-md" %>
-
-</div>
+	<h3 style="float: right;">followers: <%= @igroup.users.count %></h3>
 
 	<div>
 		<% if @igroup.user_id.to_i == current_user.id.to_i %>
-			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-primary btn-lg" %>
+			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-primary btn-md" %>
+			<%= link_to 'Edit', edit_interest_group_path(@igroup), class: "btn btn-primary btn-md" %>
 		<% end %>
 	</div>
 	
@@ -36,7 +36,7 @@
 
 	
 	<div>
-		<%= link_to "Back to markers page", listviews_path, class: "btn btn-primary btn-lg" %>
+		<%= link_to "Back to markers page", listviews_path, class: "btn btn-primary btn-md" %>
 	</div>
 	
 

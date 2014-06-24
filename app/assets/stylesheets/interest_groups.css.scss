@@ -17,9 +17,10 @@
 	width:100%; 
 	background-size: cover;  
 	height:300px;
-	margin-top: -10px;
+	margin-top: -1%;
 
 	.ig-title{
+		color: white;
 		float: right;
 		font-style: block;
 		font-size:50pt;
@@ -31,6 +32,14 @@
 
 #discover {
 	background-color: black;
-	margin-bottom: 30%;
+	margin-bottom: 15%;
 }
 
+.igroup {
+	padding: 10px;
+	.innerbox {
+		background-color: #1F2023;
+		opacity: .9;
+		text-align: center;
+	}
+}

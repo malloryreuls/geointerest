@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # our profile page- allows us to see all of the interest groups we follow
     @igroups = InterestGroup.all
+    @myigroups = InterestGroup.where(:user_id => @user.id.to_s).count  
   end
 
   private

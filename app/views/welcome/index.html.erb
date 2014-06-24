@@ -1,8 +1,6 @@
 <body id="welcome">
 <div class="container">
 
-	<div class="geologo"></div>
-
 	<div class="title">GEOINTEREST</div>
 
 <% if !current_user %>
@@ -11,7 +9,7 @@
 				<%= link_to "Sign In", new_user_session_path, class:'signup btn btn-primary btn-lg' %> </div>
 				<% else %>
 
-				<%= link_to "Find your Interst Groups", interest_groups_path, class:'signup btn btn-success btn-lg' %>
+				<%= link_to "Find your Interest Groups", interest_groups_path, class:'signup btn btn-success btn-lg' %>
  			<% end %>
 
 </div>

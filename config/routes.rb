@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :user_interest_groups, only: [:create, :destroy]
+  resources :user_interest_groups
 
   resources :mapviews, only:[:index]
   resources :listviews, only:[:index]
