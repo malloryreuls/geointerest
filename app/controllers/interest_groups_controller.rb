@@ -35,6 +35,8 @@ class InterestGroupsController < ApplicationController
   end
   
   def edit
+    @igroup = InterestGroup.find(params[:id])
+   
   end
 
   def show
@@ -43,6 +45,12 @@ class InterestGroupsController < ApplicationController
   end
 
   def update
+    @igroup = InterestGroup.find(params[:id])
+    if @igroup.update(igroup_params)
+        redirect_to interest_groups_path
+      else
+        render 'edit'
+      end
   end
 
   def destroy

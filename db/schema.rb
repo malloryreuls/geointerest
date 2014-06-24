@@ -36,14 +36,16 @@ ActiveRecord::Schema.define(version: 20140624005744) do
 
   create_table "interest_groups", force: true do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "user_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  add_index "interest_groups", ["user_id"], name: "index_interest_groups_on_user_id", using: :btree
 
   create_table "markers", force: true do |t|
     t.string   "title"
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140624005744) do
   end
 
   add_index "user_interest_groups", ["interest_group_id"], name: "index_user_interest_groups_on_interest_group_id", using: :btree
+  add_index "user_interest_groups", ["user_id", "interest_group_id"], name: "index_user_interest_groups_on_user_id_and_interest_group_id", unique: true, using: :btree
   add_index "user_interest_groups", ["user_id"], name: "index_user_interest_groups_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
