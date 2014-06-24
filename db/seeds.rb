@@ -10,7 +10,7 @@
 Marker.destroy_all
 InterestGroup.destroy_all
 
-s = InterestGroup.create(name: "Surf Spots")
+s = InterestGroup.create(name: "Surf Spots", user_id: (1).to_i)
 s.markers.create(title: "El Porto", description: "A tried-and-true beginners surf spot in El Segundo that also boasts some bigger swell in the winter months (great for intermediate level surfers).", address: "The Strand Manhattan Beach, CA 90266")
 s.markers.create(title: "Heavens", description: "A sandy-bottom surf spot with pretty consistent waves that works for all levels of surfers. Take PCH to Leo Carillo State Beach.", address: "35100 W Pacific Coast Hwy Malibu, CA 90265")
 s.markers.create(title: "Hermosa Beach Pier", description: "A sandy bottom surf area good for most levels of surfers. It also tends to attract some advanced wave riders.", address: "Pier Ave, Hermosa Beach, CA 90254")
@@ -27,7 +27,7 @@ s.markers.create(title: "Venice Beach Pier", description: "A centrally located s
 s.markers.create(title: "Zeroes", description: "Regular waves grace this spot for experienced surfers. Surf is frequent and the bottom contains coral and some sharp rocks. Nicholas Canyon Beach, not far from Leo Carillo.", address: "33850 Pacific Coast Hwy, Malibu, CA 90265")
 s.markers.create(title: "Zuma Beach", description: "This is sometimes said to be a good place for beginners but some disagree saying the waves are short and quick, giving it a slightly higher intermediate ranking.", latitude: 34.016005, longitude: -118.821087)
 
-m = InterestGroup.create(name: "Music Venues")
+m = InterestGroup.create(name: "Music Venues", user_id: (1).to_i)
 m.markers.create(title: "Greek Theatre", address: "2700 N Vermont Ave, Los Angeles, CA 90027")
 m.markers.create(title: "Walt Disney Concert Hall", address: "111 S Grand Ave, Los Angeles, CA 90012")
 m.markers.create(title: "Hollywood Bowl", address: "2301 N Highland Ave, Los Angeles, CA 90068")
@@ -46,7 +46,7 @@ m.markers.create(title: "Club Nokia", address: "800 W Olympic Blvd, Los Angeles,
 m.markers.create(title: "Nokia Theatre L.A. Live", address: "777 Chick Hearn Ct, Los Angeles, CA 90015")
 m.markers.create(title: "Hollywood Palladium", address: "6215 Sunset Blvd, Los Angeles, CA 90028")
 
-f = InterestGroup.create(name: "GA Secrets")
+f = InterestGroup.create(name: "GA Secret Spots", user_id: (1).to_i	)
 f.markers.create(title: "Groundworks Coffee Spot", address: "395 Santa Monica Blvd
 Santa Monica, CA 90401")
 f.markers.create(title: "GA Campus", address: "	1520 2nd St, Santa Monica, CA 90401")
