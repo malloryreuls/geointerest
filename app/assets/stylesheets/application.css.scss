@@ -17,9 +17,16 @@
 
  @import "bootstrap";
 
+.container-fluid{
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+}
+
+
 #map-canvas {
 	height: 900px;
 	width: 100%;
 	margin: 0 auto;
 	background-color: black;
 }
+

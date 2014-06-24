@@ -3,6 +3,7 @@ class Marker < ActiveRecord::Base
 validates_presence_of :title, :description, :interest_group_id, :address
 
 has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "missing.jpg"
+
 validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   belongs_to :interest_group

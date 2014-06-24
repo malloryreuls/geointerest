@@ -2,7 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.marker-sm{
+	height:100px;
+	width:100px;
+	border-radius:900px;
+}
+
+.igroup-lg{
+	height:200px;
+	width:200px;
+	margin: 0 auto;
+}
+.marker-container{
+	width:100%; 
+	background-size: cover;  
+	height:300px;
+	margin-top: -10px;
+
+	.ig-title{
+		float: right;
+		font-style: block;
+		font-size:50pt;
+		margin-top:240px;
+	}
+}
+
+
+
 #discover {
 	background-color: black;
 	margin-bottom: 30%;
 }
+
