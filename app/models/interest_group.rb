@@ -1,5 +1,9 @@
 class InterestGroup < ActiveRecord::Base
+<<<<<<< HEAD
 has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "missing_profile.png"
+=======
+has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "missing.jpg"
+>>>>>>> master
 validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 validates_presence_of :name, :user_id

@@ -1,6 +1,7 @@
 // Place all the styles related to the InterestGroups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .marker-sm{
 	height:100px;
 	width:100px;
@@ -24,5 +25,12 @@
 		font-size:50pt;
 		margin-top:240px;
 	}
+}
+
+
+
+#discover {
+	background-color: black;
+	margin-bottom: 30%;
 }
 
