@@ -12,8 +12,11 @@
 <div class="field">
 <%= f.text_field :name, placeholder: "Interest Group Name", class: "form-control"%>
 <%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.file_field :avatar %>
 </div>
+
 <div class="actions">
+
 <%= f.submit "Add interest group", class: "btn btn-info" %>
 </div>
 <% end %>

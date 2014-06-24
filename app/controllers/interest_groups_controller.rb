@@ -54,7 +54,7 @@ class InterestGroupsController < ApplicationController
 private 
 
   def igroup_params
-    params.require(:interest_group).permit(:name, :user_id)
+    params.require(:interest_group).permit(:name, :user_id, :avatar, :avatar_file_name, :avatar_content_type, :avatar_file_size)
   end
 
 

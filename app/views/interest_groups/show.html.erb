@@ -3,6 +3,7 @@
 
 
 	<h2 style="display:inline-block;"><%= @igroup.name.titleize %></h2>
+	<div><%= image_tag @igroup.avatar.url %></div>
 	
 	<div style="display:inline-block; float:right;">
 		<% if @igroup.user_id.to_i == current_user.id.to_i %>

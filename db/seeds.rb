@@ -17,7 +17,7 @@ s.markers.create(title: "Hermosa Beach Pier", description: "A sandy bottom surf 
 s.markers.create(title: "Leo Carillo", description: "Good standard surfing in a zone of flat rocks with sand. Do-able by surfers of all levels.", address: "35000 W Pacific Coast Hwy Malibu, CA 90265")
 s.markers.create(title: "Lunada Bay", description: "A world class rocky reef surf spot most suitable for advanced riders. It's located on the Western end of Palos Verdes.", address: "Lunada Bay
 Rancho Palos Verdes, CA 90275")
-s.markers.create(title: "Manhattan Beach/26th Street", description: "All levels of surfers flock to this sandy bottom surf spot but it's known to particularly draw advanced wave riders.", address: "26th Street Beach, Manhattan Beach, Manhattan Beach, CA")
+s.markers.create(title: "Manhattan Beach/26th <Str></Str>eet", description: "All levels of surfers flock to this sandy bottom surf spot but it's known to particularly draw advanced wave riders.", address: "26th Street Beach, Manhattan Beach, Manhattan Beach, CA")
 s.markers.create(title: "Pyramid Cove Point", description: "Access this world class rock sand bottom surf spot by boat. Advanced knowledge of surfing recommended.", address: "San Clemente Island, CA")
 s.markers.create(title: "Santa Monica / Samo 20", description: "Frequent waves hit at this centrally located surf spot that's popular with beginners.", latitude: 33.995466, longitude: -118.483253)
 s.markers.create(title: "Sunset Beach", description: "A regional classic drawing all levels of surfers. Terrain is sandy with coral and some sharp rocks. Take Sunset Boulevard going West until the road ends at the PCH.", latitude: 34.038260, longitude: -118.555368)
