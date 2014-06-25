@@ -38,6 +38,7 @@ class MarkersController < ApplicationController
   end
 
   def show
+    @igroup = InterestGroup.find(params[:interest_group_id])
   end
 
   def destroy
