@@ -40,16 +40,15 @@
 		padding: 1.5%;
 }
 
-.titleblock {
-	margin-top:66%;
-	height: 50%;
-	width: 50%;
 
 	.ig-title{
 		width: 100%;
 		color: white;
 		text-align: right;
-		margin-top: 66%;
+		position:absolute;
+		bottom: 0;
+		left: 0;
+		text-shadow: 1px 1px black;
 		font-size: 40pt;
-	}
+	
 }
