@@ -10,14 +10,22 @@
 </div>
 <% end %>
 <div class="field">
+
 <%= f.text_field :name, placeholder: "Interest Group Name", class: "form-control"%>
 <%= f.hidden_field :user_id, value: current_user.id %>
+</div>
 <br/>
-<%= f.file_field :avatar %>
+
+<div class="field">
+<%= f.file_field :avatar, class: "form-control"  %>
 </div>
 
 <div class="actions">
 <br/>
 <%= f.submit "Add interest group", class: "btn btn-info" %>
+</div>
+</br>
+<div class="actions">
+<%= link_to 'Cancel', interest_groups_path, class: "btn btn-info"%>
 </div>
 <% end %>
