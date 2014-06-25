@@ -1,13 +1,19 @@
 <div class="container">
 
+<div class="page-header"></div>
+	<div class="profile-header" style="margin: 1%;">
+  		<h3 style="display: inline-block; float: left;"><%= @user.username.capitalize %>'s Profile</h3>
+  		<div style="display: inline-block; float: right;"><%= image_tag @user.avatar.url(:thumb) %></div>
+	</div>
+
 <div class="page-header">
-  <div style="display: inline-block;"><%= image_tag @user.avatar.url(:thumb) %></div>
-  <h3 style="display: inline-block;"><%= @user.username.capitalize %>'s Profile</h3>
+<div class="numfollow" style="margin: 1%;">
   <p>Following: <%= @user.interest_groups.count %></p>
   <p>My Interest Groups: <%= @myigroups %></p>
   	<% if current_user.id == @user.id %>
   <%= link_to "Edit User", edit_user_registration_path(@user) %>
   <% end %>
+</div>
 </div>
 
 <div class="jumbotron">

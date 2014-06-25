@@ -38,7 +38,7 @@
 			<h3>
 				<%= link_to m.title, interest_group_marker_path(m.interest_group.id, m.id)%>
 			</h3>
-			<%= image_tag m.avatar.url, class: "marker-sm"%>
+			<a href="<%= @igroup.id %>/markers/<%= m.id %>"><%= image_tag m.avatar.url, class: "marker-sm"%></a>
 	
 			<div>
 				<% if @igroup.user_id.to_i == current_user.id.to_i %>

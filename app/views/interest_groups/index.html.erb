@@ -20,7 +20,7 @@
         <p></p>
         <% end %>
       <% end %> 
-    <div style="color: white; display: inline-block;">Followers: <%=i.users.count %></div>
+    <div style="color: white; display: inline-block;"><%=i.users.count %> followers</div>
     <div style="display: inline-block;">
       <%= form_for @uigroups do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
@@ -30,10 +30,6 @@
         <%= link_to "√ Following", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-success btn-md" %>          
         <% else %>
         <%= f.submit "+ Follow", class: "btn btn-primary btn-md" %>
-        <% end %>
-
-        <% if i.user_id.to_i == current_user.id.to_i %>
-        <%= link_to "Delete", [i], method: :delete, data: {confirm: "Are you sure you want to delete this interest group?"}, class: "btn btn-warning btn-md" %>
         <% end %>
 
       <% end %> <!-- closes uigroup loop -->

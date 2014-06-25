@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :convert_options => '-auto-orient' }, :default_url => "missing_profile.png"
+has_attached_file :avatar, :styles => { :original => ['1920x1680>', :jpg, :convert_options => "-auto-orient", :quality => 100], :large => ['600x600>', :jpg, :convert_options => "-auto-orient", :quality => 100] }, :default_url => "missing_profile.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 has_many :user_interest_groups
