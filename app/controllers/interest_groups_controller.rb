@@ -36,10 +36,13 @@ class InterestGroupsController < ApplicationController
   
   def edit
     @igroup = InterestGroup.find(params[:id])
+
    
   end
 
   def show
+    @igroups = InterestGroup.all
+    @uigroups = UserInterestGroup.new
     @igroup = InterestGroup.find(params[:id])
     respond_with @igroup
   end

@@ -5,10 +5,23 @@
 </div>
 
 <div>
+	 <% @igroups.each do |i| %>
+      <%= form_for @uigroups do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :interest_group_id, value: i.id %>
+        <% if i.user_interest_groups.map(&:user_id).include? current_user.id %>
+        <%= link_to "√ Following", user_interest_group_path(i.user_interest_groups.where(:user_id => current_user.id).first.id), method: :delete, class: "btn btn-success btn-md" %>          
+        <% else %>
+        <%= f.submit "+ Follow", class: "btn btn-primary btn-md" %>
+        <% end %>
+      <% end %>
+
 	<h3>followers: <%= @igroup.users.count %></h3>
-	<% if @igroup.user_id.to_i == current_user.id.to_i %>
-	<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-primary btn-md" %>
-	<%= link_to 'Edit', edit_interest_group_path(@igroup), class: "btn btn-primary btn-md" %>
+		<% if @igroup.user_id.to_i == current_user.id.to_i %>
+			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-primary btn-md" %>
+			<%= link_to 'Edit', edit_interest_group_path(@igroup), class: "btn btn-primary btn-md" %>
+			<%= link_to "Delete", @igroup, method: :delete, data: {confirm: "Are you sure you want to delete this interest group?"}, class: "btn btn-warning btn-md" %>
+		<% end %>
 	<% end %>
 </div>
 <div class="row">
