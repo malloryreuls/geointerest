@@ -7,12 +7,10 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <% if current_user %>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav style="background: #5E5F5F; opacity: 0.92;"class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -21,17 +19,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">GeoInterest</a>
+      <a class="navbar-brand" style="color: white;" href="/">GeoInterest</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" style="text-align: center;">
         <% if current_user %>
-        <li><%= link_to "Interest Groups", interest_groups_path %></li>
-        <li><%= link_to "Map", mapviews_path %></li>
-        <li ><%= link_to "List", listviews_path %></li>    
-         <li class="navbar-text"><span>Hello, <%= link_to current_user.username, user_path(current_user), class:'navbar-link' %></span></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+        <li><%= link_to "Interest Groups", interest_groups_path, style:'color: white;' %></li>
+        <li><%= link_to "Map", mapviews_path, style:'color: white;'  %></li>
+        <li ><%= link_to "List", listviews_path, style:'color: white;'  %></li>    
+         <li class="navbar-text"><span style="color: white;">Hello, <%= link_to current_user.username, user_path(current_user), class:'navbar-link', style:'color: white;'  %></span></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, style:'color: white;'  %></li>
           <% else %>
            <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <li><%= link_to "Sign In", new_user_session_path %></li>

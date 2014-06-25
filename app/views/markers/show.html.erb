@@ -1,19 +1,23 @@
 <div class="container">
 
+<div class="row">
+	<div class="col-xs-12">
+		<div class="markerbox">
 	<h1><%= @marker.title %></h1>
 
-	<div><%= image_tag @marker.avatar.url %></div>
+	<div><%= image_tag @marker.avatar.url, style: "background: cover; width: 160px; height: 160px; border: 3px solid black; border-radius: 50%; text-align: center;" %></div>
+	<br />
 
-	<ul style="list-style:none;">
-		<li>Title: <b><%= @marker.title %></b></li>
-		<li>Description: <%= @marker.description %></li>
-		<li>Address: <%= @marker.address %>, Latitude: <%= @marker.latitude %>, Longitdue: <%= @marker.longitude %></li>				
-	</ul>
-
-	<div>
-		<%= link_to "Back to markers page", listviews_path, class: "btn btn-primary btn-lg" %>
+		<div>Title: <b><%= @marker.title %></b></div>
+		<div>Description: <%= @marker.description %></div>
+		<div>Address: <%= @marker.address %>, Latitude: <%= @marker.latitude %>, Longitdue: <%= @marker.longitude %></div>				
+</div>
+</div>
+</div>
+</br>
+	<div style="text-align: center;">
+		<%= link_to "Back to Interst Group", interest_group_path(@igroup), class: "btn btn-primary btn-lg"%>
 	</div>
-
 
 </div>
 	
