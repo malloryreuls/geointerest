@@ -15,7 +15,7 @@
 }
 .marker-container{
 	width:100%; 
-	background-size: cover;  
+	background-size: 100% 100%;  
 	height:300px;
 	margin-top: -1%;
 }
@@ -40,16 +40,16 @@
 		padding: 1.5%;
 }
 
-.titleblock {
-	margin-top:66%;
-	height: 50%;
-	width: 50%;
 
 	.ig-title{
 		width: 100%;
 		color: white;
 		text-align: right;
-		margin-top: 66%;
+		bottom: 0;
+		text-shadow: 1px 1px black;
+		margin-bottom:-9px;
+		left: 0;
+		right: 0;
+		position: absolute;
 		font-size: 40pt;
 	}
-}
