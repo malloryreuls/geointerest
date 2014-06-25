@@ -1,7 +1,7 @@
 <body id="discover">
 <div class="container">
   <div class="row">
-  <h2 style="color: white; display: inline-block;">Discover Interest Groups</h2>
+  <h2 style="color: white; display: inline-block; margin-left: 3%">Discover Interest Groups</h2>
   <div style="float: right; display: inline-block; margin-top: 2%; margin-bottom: 2%;"><%= link_to "Create New Interest Group", new_interest_group_path, class: "btn btn-primary btn-md" %></div>
 </div>
   
@@ -37,10 +37,10 @@
         <% end %>
 
       <% end %> <!-- closes uigroup loop -->
-    </div> <!-- closes innerbox -->
-    </div>
+    </div>  <!-- closes inline-block -->
+    </div>  <!-- closes innerbox -->
     </div>
     <% end %> <!-- closes igroup loop -->
-  </div>
+  </div>  <!-- closes row -->
 </div>
 </body>

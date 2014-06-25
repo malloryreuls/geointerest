@@ -23,7 +23,7 @@ class InterestGroupsController < ApplicationController
       if @igroup.save
 
         respond_to do |format|
-        format.html { redirect_to interest_groups_path }
+        format.html { redirect_to interest_group_path(@igroup) }
         format.json { render json: @igroup, status: :created }
         end
       else
