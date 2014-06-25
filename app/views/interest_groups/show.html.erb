@@ -4,8 +4,13 @@
 	<h2 class="ig-title"><%= @igroup.name.upcase %></h2>
 </div>
 
-<div>
+<div class="follow">
+	<div class="numfollow" style="float: right;">
+	<p style="color: black; font-size: 20pt;"><b><%= @igroup.users.count %> followers</b></p>
+	</div>
+
 	 <% @igroups.each do |i| %>
+	 <div class="follow button" style="float: left;">
       <%= form_for @uigroups do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :interest_group_id, value: i.id %>
@@ -15,8 +20,10 @@
         <%= f.submit "+ Follow", class: "btn btn-primary btn-md" %>
         <% end %>
       <% end %>
+  </div>
 
-	<h3>followers: <%= @igroup.users.count %></h3>
+</div>
+<div>
 		<% if @igroup.user_id.to_i == current_user.id.to_i %>
 			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-primary btn-md" %>
 			<%= link_to 'Edit', edit_interest_group_path(@igroup), class: "btn btn-primary btn-md" %>
@@ -24,6 +31,7 @@
 		<% end %>
 	<% end %>
 </div>
+
 <div class="row">
 	<% @igroup.markers.each do |m| %>
 	<div class="col-xs-12 col-sm-4">
