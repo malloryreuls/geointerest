@@ -1,15 +1,6 @@
-
-
+<body style="background: #C0B59F;">
 <div class="col-xs-12 marker-container", style="background-image:url('<%=@igroup.avatar.url%>');">
-	<h2 class="ig-title"><%= @igroup.name.upcase %></h2>
-</div>
-
-<div class="follow">
-	<div class="numfollow" style="float: right;">
-	<p style="color: black; font-size: 20pt;"><b><%= @igroup.users.count %> followers</b></p>
-	</div>
-
-	 <div class="follow button" style="float: left;">
+		 <div class="follow button" style="float: left; margin-top: 10%;">
       <%= form_for @uigroups do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :interest_group_id, value: @igroup.id %>
@@ -20,14 +11,17 @@
         <% end %>
       <% end %>
   </div>
-
+	<h2 class="ig-title"><%= @igroup.name.upcase %></h2>
 </div>
-<div>
-		<% if @igroup.user_id.to_i == current_user.id.to_i %>
-			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-primary btn-md" %>
-			<%= link_to 'Edit', edit_interest_group_path(@igroup), class: "btn btn-primary btn-md" %>
-			<%= link_to "Delete", @igroup, method: :delete, data: {confirm: "Are you sure you want to delete this interest group?"}, class: "btn btn-warning btn-md" %>
-		<% end %>
+
+<div class="follow">
+	  	<div style="float: right;">
+	<% if @igroup.user_id.to_i == current_user.id.to_i %>
+			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-info btn-md" %>
+			<% end %>
+			</div>
+<p style="color: black; font-size: 16pt;"><b><%= @igroup.users.count %> followers</b></p>
+
 </div>
 
 <div class="row">
@@ -47,7 +41,7 @@
 				<% end %>
 			</div>
 
-			<div>Message: <%= m.description %></div>
+			<div>Description: <%= m.description %></div>
 			<div>Address: <%= m.address %></div>				
 	</div>
 	</div>
@@ -55,9 +49,11 @@
 <% end %>
 </div>	
 
-<div>
-	<%= link_to "Back to markers page", listviews_path, class: "btn btn-primary btn-md" %>
+<div style="text-align: center; margin: 5%;">
+	<%= link_to "Back to interest groups", interest_groups_path, class: "btn btn-primary btn-md" %>
 </div>
+
+</body>
 
 
 

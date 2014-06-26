@@ -22,22 +22,31 @@
 
 #discover {
 	background-color: black;
+	background-image: url('http://i.imgur.com/UMWttDB.jpg');
 	margin-bottom: 15%;
 }
+
 
 .igroup {
 	padding: 1.5%;
 	.innerbox {
-		background-color: #1F2023;
-		opacity: .9;
+		background-color: #E3E3E4;
+		opacity: .85;
 		text-align: center;
 		padding: 5%;
+		color: black;
+		border-radius: 25px;
 	}
 }
 
 	.markerbox {
 		text-align: center;
 		padding: 1.5%;
+		background: #EAEAEA;
+		opacity: 0.7;
+		padding-bottom: 8%;
+		border-radius: 20px;
+
 }
 
 
