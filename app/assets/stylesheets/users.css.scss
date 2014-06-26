@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#usersign { 
+  background: url('coast.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
 body
 {
     background-color: #1b1b1b;
@@ -32,6 +43,8 @@ body
 	text-align: center; 
 	margin: 5px 0 20px 0;
 }
+
+
 
 .input-group-addon {
     background-color: rgb(50, 118, 177);

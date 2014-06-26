@@ -1,3 +1,4 @@
+<body id="usersign">
 <div class="container">
 	<div class="row">
 		<%= devise_error_messages! %>
@@ -9,7 +10,7 @@
 					<form class="form form-signup" role="form">
 						<div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span>
 							</span>
 							<%= f.text_field :username, placeholder: "Username", :autofocus => true, class: "form-control" %>
 						</div>
@@ -49,3 +50,4 @@
 	<%= render "users/shared/links" %>
 </div> 
 </div> 
+</body>

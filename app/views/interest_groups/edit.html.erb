@@ -5,32 +5,4 @@
 
 	
 </div>
-<footer>
-<nav style="background: #5E5F5F; padding:0px"class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <div class="container-fluid">
-
-    <div class="navbar-center">
-
-  <button class = "navbar-toggle mobileButt"><%= link_to "", user_path(current_user.id.to_i), class: "glyphicon glyphicon-user"%></button>
-  
-  <button class = "navbar-toggle mobileButt" style="width:50% !important;"><%= link_to "", mapviews_path, class: "glyphicon glyphicon-globe"%></button>   
-  <button class = "navbar-toggle mobileButt"><%= link_to "", interest_groups_path, class: "glyphicon glyphicon-th-list"%></button>  
-
-
-
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-   
-      <ul class="nav navbar-nav navbar-center" style="text-align: center;">
-        
-      
-        <%= link_to "© MMW", "https://github.com/malloryreuls/geointerest", class: "btn btn-lg", style:'color: white;' %>
-        
-
-      </ul> 
-    </div>
-  </div>
-</nav>
-</footer>
+<%= render 'footerform' %>
