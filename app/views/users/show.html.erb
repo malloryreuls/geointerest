@@ -1,43 +1,37 @@
 <div class="container">
+<div class="page-header" style="display: inline-block; width: 100%; background-image: url('http://i.imgur.com/qRml7JG.jpg'); padding: 20px; box-shadow: 0px 0px 5px 2px #6B6C6C;">
+  <h2 style="width: 50%; float: left; color: white;"><%= @user.username.capitalize %>'s Profile</h2>
+  <div style="width: 50%; float: right; text-align: right;">
+  <%= image_tag @user.avatar.url(:large	), style:'width: auto; height: 150px; border-radius: 6%;'%>
+  <small><h5><% if current_user.id == @user.id %>
+  <%= link_to "Edit User", edit_user_registration_path(@user), class: 'btn btn-default btn-sm' %>
+  <% end %></h5></small>
+</div>
 
-<div class="page-header"></div>
-	<div class="profile-header" style="margin: 1%;">
-  		<h3 style="display: inline-block; float: left;"><%= @user.username.capitalize %>'s Profile</h3>
-  		<div style="display: inline-block; float: right;"><%= image_tag @user.avatar.url(:thumb) %></div>
-	</div>
+<div style="clear: left;"></div>
 
-<div class="page-header">
 <div class="numfollow" style="margin: 1%;">
-  <p>Following: <%= @user.interest_groups.count %></p>
-  <p>My Interest Groups: <%= @myigroups %></p>
-  	<% if current_user.id == @user.id %>
-  <%= link_to "Edit User", edit_user_registration_path(@user) %>
-  <% end %>
+  <p style="font-size: 12pt; font-weight: bold; color: white;">Following: <%= @user.interest_groups.count %></p>
+  <p style="font-size: 12pt; font-weight: bold; color: white;"><%= @myigroups %> Interest Groups </p>
 </div>
 </div>
+
 
 <div class="jumbotron">
   <h4>My Interest Groups:</h4>
-	<ul>
 	<% @igroups.each do |ig| %>
 		<% if @user.id.to_i == ig.user_id.to_i %>
 			<h5><%= link_to ig.name.titleize, interest_group_path(ig) %></h5>
 		<% end %>
-	<% end %>
-
-	</ul>	
+	<% end %>	
 </div>
 <div class="jumbotron">
   <h4>Interest Groups I Follow:</h4>
-
-  	<ul>
 	<% @user.interest_groups.each do |i| %>
 		<h5><%= link_to i.name.titleize, interest_group_path(i) %></h5> 
 	<% end %>
-	</ul>	
-
 </div>
 	
-	 <%= link_to "Create New Interest Group", new_interest_group_path, class: 'btn btn-primary btn-lg' %>
+	 <div style="text-align: center; margin-bottom: 10%;"><%= link_to "Create New Interest Group", new_interest_group_path, class: 'btn btn-primary btn-lg' %></div>
 
 </div>

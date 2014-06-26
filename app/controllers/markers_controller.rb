@@ -2,10 +2,6 @@ class MarkersController < ApplicationController
 
   before_action :set_marker, only: [:edit, :update, :show, :destroy]
 
-  def index
-    @markers = Marker.all
-  end
-
   def new
     @igroup = InterestGroup.find(params[:interest_group_id])
     @marker = Marker.new
