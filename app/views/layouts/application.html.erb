@@ -28,7 +28,7 @@
         <li><%= link_to "Interest Groups", interest_groups_path, style:'color: white;' %></li>
         <li><%= link_to "Map", mapviews_path, style:'color: white;'  %></li>
         <li ><%= link_to "Marker List", listviews_path, style:'color: white;'  %></li>    
-         <li class="navbar-text"><span style="color: white;">Hello, <%= link_to current_user.username, user_path(current_user), class:'navbar-link', style:'color: white;'  %></span></li>
+         <li class="navbar-text"><span style="color: white;">Hello, <%= link_to current_user.username, user_path(current_user), class:'navbar-link', style:'color: white; font-weight: bold'  %></span></li>
           <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, style:'color: white;'  %></li>
           <% else %>
            <li><%= link_to "Sign Up", new_user_registration_path %></li>
