@@ -2,19 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.markerbox {
+.igroup {
+	padding: 1.5%;
+	.markerbox {
+		background-color: #E3E3E4;
+		opacity: .85;
 		text-align: center;
 		padding: 3%;
-		margin: 2%;
-}
-
-.markershow {
-		text-align: center;
-		margin: 2%;
-		background: #E0D0B9;
-		opacity: 0.9;
-		padding: 1.5%;
+		color: black;
 		border-radius: 25px;
-
+		margin: 10px;
+	}
 }
-

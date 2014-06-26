@@ -1,10 +1,10 @@
-<body style="background: #E3E3E4;">
+<body id="cardboard">
 
 <div class="container">
-
+<br>
 	<div class="row">
-		<div class="col-xs-12">
-			<div class="markershow">
+		<div class="col-xs-12 igroup">
+			<div class="innerbox">
 				<h1><%= @marker.title %></h1>
 
 				<div><%= image_tag @marker.avatar.url, style: "background: cover; width: 250px; border-radius: 3%; text-align: center; box-shadow: 0px 0px 5px 2px #6B6C6C; margin: 1%;"%></div>
@@ -16,7 +16,7 @@
 					<% end %>
 				</div>
 				<div><b>Description:</b> <%= @marker.description %></div>
-				<div>Address: <%= @marker.address %></div>				
+				<div><b>Address:</b> <%= @marker.address %></div>				
 			</div>
 		</div>
 

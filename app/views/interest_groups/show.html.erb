@@ -1,5 +1,6 @@
-<body style="background: #E0D0B9;">
-<div class="col-xs-12 marker-container", style="background-image:url('<%=@igroup.avatar.url%>');">
+<body id="cardboard">
+	<div class="row">
+    <div class="col-xs-12 marker-container", style="background-image:url('<%=@igroup.avatar.url%>'); overflow: hidden;">
 		 <div class="follow button" style="float: left; margin-top: 10%;">
       <%= form_for @uigroups do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
@@ -13,6 +14,7 @@
   </div>
 	<h2 class="ig-title"><%= @igroup.name.upcase %></h2>
 </div>
+</div>
 
 <div class="follow">
 	  	<div style="float: right;">
@@ -20,29 +22,23 @@
 			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-info btn-md" %>
 			<% end %>
 			</div>
-<p style="color: black; font-size: 16pt;"><b><%= @igroup.users.count %> followers</b></p>
+<p style="color: black; font-size: 16pt; float: left; margin-left: 2%;"><b><%= @igroup.users.count %> followers</b></p>
 
 </div>
-
+<div style="clear: left;"></div>
 <div class="row">
 	<% @igroup.markers.each do |m| %>
-	<div class="col-xs-12 col-sm-4">
-		<div class="markerbox">
-
-			<h3>
-				<%= link_to m.title, interest_group_marker_path(m.interest_group.id, m.id)%>
-			</h3>
-			<a href="<%= @igroup.id %>/markers/<%= m.id %>"><%= image_tag m.avatar.url, class: "marker-sm"%></a>
-	
+	<div class="col-xs-12 col-sm-4 igroup">
+		<div class="markerbox" style="margin: 10px;">
+			<a href="<%= @igroup.id %>/markers/<%= m.id %>"><%= image_tag m.avatar.url, style: "background: cover; width: 160px; height: 160px; border: 3px solid #656563; border-radius: 50%; text-align: center;" %></a>
 			<div>
 				<% if @igroup.user_id.to_i == current_user.id.to_i %>
 				<%= link_to "Edit", edit_interest_group_marker_path(@igroup, m)%>
 				<%= link_to " - Delete", [@igroup, m], method: :delete, data:{confirm:"Are you sure you want to delete this marker?"}%>
 				<% end %>
 			</div>
-
-			<div>Description: <%= m.description %></div>
-			<div>Address: <%= m.address %></div>				
+			<h4 style="color: black"><%= link_to m.title, interest_group_marker_path(m.interest_group.id, m.id)%></h4>	
+			<p><b>Address:</b> <%= m.address %></p>		
 	</div>
 	</div>
 
@@ -50,9 +46,7 @@
 </div>	
 
 <div class="bottombtn">
-	<%= link_to "Back to interest groups", interest_groups_path, class: "btn btn-primary btn-lg" %>
-</div>
-
+	<%= link_to "Back to interest groups", interest_groups_path, class: "btn btn-primary btn-lg" %></div>
 </body>
 
 

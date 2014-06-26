@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#cardboard { 
+  background: url('cbyw.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .marker-sm{
 	height:100px;
 	width:100px;
@@ -26,6 +36,23 @@
 	margin-bottom: 15%;
 }
 
+.discoverheader {
+	color: white; 
+	display: inline-block; 
+	margin-left: 3%;
+}
+
+#rightcreate {
+	float: right; 
+	display: inline-block; 
+	margin-top: 2%; 
+	margin-bottom: 2%;
+}
+
+.count {
+	display: inline-block; 
+	margin-right: 2%;
+}
 
 .igroup {
 	padding: 1.5%;
@@ -43,7 +70,6 @@
 		text-align: center;
 		padding: 1.5%;
 		background: #EAEAEA;
-		opacity: 0.7;
 		padding-bottom: 8%;
 		border-radius: 20px;
 

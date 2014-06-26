@@ -1,8 +1,8 @@
 <body id="discover">
 <div class="container">
   <div class="row" style="margin-top: 2%;">
-  <h2 style="color: white; display: inline-block; margin-left: 3%">Discover Interest Groups</h2>
-  <div style="float: right; display: inline-block; margin-top: 2%; margin-bottom: 2%;"><%= link_to "Create New Interest Group", new_interest_group_path, class: "btn btn-primary btn-md" %></div>
+  <h2 class="discoverheader">Discover Interest Groups</h2>
+  <div id="rightcreate"><%= link_to "Create New Interest Group", new_interest_group_path, class: "btn btn-primary btn-md" %></div>
 </div>
   
   <div class="row">
@@ -18,7 +18,7 @@
         <h5><%= link_to u.username, user_path(u), style: "color: black;" %></h5>
         <% end %>
       <% end %> 
-    <div style="display: inline-block; margin-right: 2%;"><p style="font-size: 12pt; font-weight: bold;"><%=i.users.count %> followers</p></div>
+    <div class="count"><p style="font-size: 12pt; font-weight: bold;"><%=i.users.count %> followers</p></div>
     <div style="display: inline-block;">
       <%= form_for @uigroups do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
