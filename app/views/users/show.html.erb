@@ -1,22 +1,22 @@
 <div class="container">
-<div class="page-header" style="display: inline-block; width: 100%; background-image: url('http://i.imgur.com/UMWttDB.jpg'); padding: 20px; box-shadow: 0px 0px 5px 2px #6B6C6C;">
-  <h2 style="width: 50%; float: left; color: white;"><%= @user.username.capitalize %>'s Profile</h2>
-  <div style="width: 50%; float: right; text-align: right;">
+<div class="page-header profiletop">
+  <h2 class="profiletitle"><%= @user.username.capitalize %>'s Profile</h2>
+  <div class="profilepic">
   <%= image_tag @user.avatar.url(:large	), style:'width: auto; height: 150px; border-radius: 6%;'%>
   <small><h5><% if current_user.id == @user.id %>
-  <%= link_to "Edit User", edit_user_registration_path(@user), class: 'btn btn-default btn-sm' %>
+  <%= link_to "- Edit User -", edit_user_registration_path(@user), class: 'btn btn-default btn-sm' %>
   <% end %></h5></small>
 </div>
 
 <div style="clear: left;"></div>
 
-<div class="numfollow" style="margin: 1%;">
+<div style="margin: 1%;">
   <p style="font-size: 12pt; font-weight: bold; color: white;">Following: <%= @user.interest_groups.count %></p>
   <p style="font-size: 12pt; font-weight: bold; color: white;"><%= @myigroups %> Interest Groups </p>
 </div>
 </div>
 
-<div style="text-align: center; margin: 5px 0 20px 0;"><%= link_to "Create New Interest Group", new_interest_group_path, class: 'btn btn-primary btn-lg' %></div>
+<div class="profileadd"><%= link_to "Create New Interest Group", new_interest_group_path, class: 'btn btn-primary btn-lg' %></div>
 
 <div class="jumbotron">
   <h4>My Interest Groups:</h4>
