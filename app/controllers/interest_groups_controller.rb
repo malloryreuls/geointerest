@@ -10,6 +10,7 @@ class InterestGroupsController < ApplicationController
     # creates the interestgroup.json formatted by the currentusers interestgroups that they follow
     @currentigroup = current_user.interest_groups
     respond_with @currentigroup
+    @igroup = InterestGroup.new
   end
 
   def new

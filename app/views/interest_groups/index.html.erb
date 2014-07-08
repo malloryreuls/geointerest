@@ -2,7 +2,43 @@
 <div class="container">
   <div class="row" style="margin-top: 2%;">
   <h2 class="discoverheader">Discover Interest Groups</h2>
-  <div id="rightcreate"><%= link_to "Create New Interest Group", new_interest_group_path, class: "btn btn-primary btn-md" %></div>
+
+  <!-- Button trigger modal -->
+<button id="rightcreate" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Create New Interest Group</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create a New Interest Group</h4>
+      </div>
+      <div class="modal-body">
+
+          <div class="field">
+
+          <%= form_for InterestGroup.new do |f| %>
+
+          <%= f.text_field :name, placeholder: "Interest Group Name", class: "form-control"%>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          </div>
+          <br/>
+
+          <div class="field">
+          <%= f.file_field :avatar, class: "form-control"  %>
+          </div>              
+      </div>
+      <div class="modal-footer">
+        <div class="actions"><%= f.submit "Add Interest Group", class: "btn btn-info" %></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal end -->
+
 </div>
   
   <div class="row">

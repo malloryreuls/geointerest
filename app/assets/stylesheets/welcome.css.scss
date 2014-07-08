@@ -10,11 +10,18 @@
 	width: 250px;
 }
 
+.welcometext {
+  width: 90%; 
+  opacity: 0.7; 
+  text-align: center; 
+  margin: 0 auto; 
+  border-radius: 20px;
+}
 
 @media (max-width: 600px) {
 	.title {
-	margin-top: 25%;
-	margin-bottom: 15%;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
   .logo {
 	width: 200px;

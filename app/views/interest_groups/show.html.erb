@@ -1,6 +1,6 @@
 <body id="cardboard">
 	<div class="row">
-    <div class="col-xs-12 marker-container", style="background-image:url('<%=@igroup.avatar.url%>'); overflow: hidden;">
+    <div class="col-xs-12 marker-container" style="background-image: url('<%=@igroup.avatar.url%>');">
 		 <div class="follow button" style="float: left; margin-top: 10%;">
       <%= form_for @uigroups do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
