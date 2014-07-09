@@ -46,6 +46,7 @@ class InterestGroupsController < ApplicationController
     @uigroups = UserInterestGroup.new
     @igroup = InterestGroup.find(params[:id])
     respond_with @igroup
+    @marker = Marker.new
   end
 
   def update

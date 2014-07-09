@@ -17,12 +17,54 @@
 </div>
 
 <div class="follow">
-	  	<div style="float: right;">
-	<% if @igroup.user_id.to_i == current_user.id.to_i %>
-			<%= link_to "Create a new marker", new_interest_group_marker_path(@igroup), class: "btn btn-info btn-md" %>
-			<% end %>
-			</div>
 <p style="color: black; font-size: 16pt; float: left; margin-left: 2%;"><b><%= @igroup.users.count %> followers</b></p>
+
+
+<!-- Begin Modal -- >
+
+	<!-- Button trigger modal -->
+
+<% if @igroup.user_id.to_i == current_user.id.to_i %>
+<button style="float: right;" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Create a New Marker</button>
+			<% end %>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create a New Marker</h4>
+      </div>
+      <div class="modal-body">
+
+      	<%= form_for [@igroup, Marker.new] do |f| %>
+
+          <div class="field">
+    <%= f.text_field :title, placeholder: "Title: Bay Cities Italian Deli", class: "form-control" %>
+  </div>
+  </br>
+  <div class="field">
+    <%= f.text_area :description, placeholder: "Description: Best italian subs in Los Angeles. Order online and pick up your sandwich in the back to avoid the wait.", class: "form-control" %>
+  </div>
+  </br>
+  <div class="field">
+    <%= f.text_field :address, placeholder: "Address: 1234 Lincoln Ave, Santa Monica, CA 90404", class: "form-control" %>
+  </div>
+</br>
+          <div class="field choose_file btn btn-info">
+          	<span>Upload Marker Image</span>
+          <%= f.file_field :avatar, class: "form-control"  %>
+          </div>              	
+      </div>
+      <div class="modal-footer">
+        <div class="actions"><%= f.submit "Submit Marker", class: "btn btn-success" %></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+  <!-- End Modal -->
 
 </div>
 <div style="clear: left;"></div>
