@@ -41,7 +41,7 @@
  <% end %> 
 <div class="container-fluid">
   <% flash.each do |key, value| %>
-    <div class="alert alert-warning alert-dismissable notice alert alert-<%= key %>" style="position: fixed; text-align: center; width: 100%"><%= value %>
+    <div class="alert alert-warning alert-dismissable notice alert alert-<%= key %>" style="text-align: center; width: 100%; margin-top: 20px;"><%= value %>
     </div>
 </div>
   <% end %>

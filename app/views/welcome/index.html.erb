@@ -1,21 +1,18 @@
 <body id="welcome">
-<div class="container">
+	<div class="container">
 
-<div class="title">
-<img class="logo" src="http://i.imgur.com/Wk2AJ8V.png"  >
-</div>
-<% if !current_user %>
-				
-				<div class="btn-group btn-group-lg" style="margin-bottom: 20px;"><%= link_to "Sign Up", new_user_registration_path, class:'signup btn btn-info btn-lg' %>
-				<%= link_to "Sign In", new_user_session_path, class:'signup btn btn-primary btn-lg' %> </div>
-				<div class="jumbotron welcometext">
-				<p>GeoInterest is a location based interest finder. <br/> Love Dive Bars? <a href="/users/sign_up" >Sign up</a> and subscribe to the Dive Bar interest group to always be in the know of the coolest dive bars, wherever you are!</p>
-				</div>
-				<% else %>
+		<div class="title">
+		</div>
+		<img class="logo" src="http://i.imgur.com/Wk2AJ8V.png">
+		<div class="clearfix"></div>
+<div><div class="jumbotron welcomehelp" style="background: white; opacity: 0.7; color: #0EB495;"> <h1 class="welcometext" style="font-size: 20pt;"> Discover more about your interests, based on your location.</h1>Love Dive Bars? <a href="/users/sign_up" style="color: #0EB495;"><b>Sign up</b></a> and subscribe to the Dive Bar interest group</br> to stay up to date on the coolest dive bars, wherever you are!</div></div>
 
-				<%= link_to "Find my Interest Groups", interest_groups_path, class:'signup btn btn-warning btn-lg' %>
- 			<% end %>
-</div>
-
-</body>
+		<% if !current_user %>
+		<div class="btn-group btn-group-lg" style="margin-bottom: 20px;"><%= link_to "Sign Up", new_user_registration_path, class:'signup btn btn-info btn-lg' %>
+			<%= link_to "Sign In", new_user_session_path, class:'signup btn btn-primary btn-lg' %> </div>
+			<% else %>
+			<%= link_to "Find my Interest Groups", interest_groups_path, class:'signup btn btn-warning btn-lg' %>
+			<% end %>
+		</div>
+	</body>
 
