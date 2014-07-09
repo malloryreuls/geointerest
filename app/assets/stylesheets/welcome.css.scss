@@ -7,15 +7,8 @@
 	margin-bottom: 1%;
 }
   .logo {
-	width: 250px;
-}
-
-.welcometext {
-  width: 90%; 
-  opacity: 0.7; 
-  text-align: center; 
-  margin: 0 auto; 
-  border-radius: 20px;
+	width: 20%;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 600px) {
@@ -28,15 +21,37 @@
 }
   }
 
-/*p { 
-font-family: 'Montserrat', sans-serif;
-color: black;
-background: none;
-font-size: 35px;
-}*/
+.welcometext {
+  font-family: Helvetica Neue;
+  text-align: center; 
+  margin: 0 auto; 
+  color: white;
+  margin-bottom: 20px;
+}
 
+.welcomehelp {
+  color: #0EB495; 
+  font-family: Helvetica Neue; 
+  font-size: 16pt;
+}
+
+@media (max-width: 600px) {
+  .welcometext {
+  font-family: Helvetica Neue;
+  font-size: 22pt;
+  text-align: center; 
+  margin: 0 auto; 
+  color: white;
+  margin-bottom: 20px;
+}
+
+.welcomehelp {
+  color: #0EB495; 
+  font-family: Helvetica Neue; 
+  font-size: 14pt;
+}
+  }
 .signup {
-  margin-top: 4%;
   font-family: arial;
   text-align: center;
 }
